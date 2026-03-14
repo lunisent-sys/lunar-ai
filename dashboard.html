@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lunar AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🌙 Lunar AI</h2>
+            </div>
+            
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar"></div>
+                <div class="user-details">
+                    <div class="user-name" id="userName"></div>
+                    <div class="user-email" id="userEmail"></div>
+                </div>
+            </div>
+            
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history will be loaded here -->
+            </div>
+            
+            <button class="btn btn-secondary" id="newChatBtn" style="margin-bottom: 10px;">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
+            
+            <button class="btn btn-secondary" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="header-title">
+                    <h3>AI Assistant</h3>
+                    <div class="header-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button title="Upload File" id="uploadBtn">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <button title="Clear Chat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message ai">
+                    <div class="message-avatar">🌙</div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Hello! I'm Lunar AI, your intelligent assistant. 
+                            How can I help you today? You can ask me questions, 
+                            upload files, or just chat with me!
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Type your message... (Shift + Enter for new line)"
+                        rows="1"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button class="input-action-btn" id="uploadBtn" title="Upload File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                    </div>
+                    <button class="send-btn" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- File Upload Modal -->
+    <div class="modal" id="fileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload File</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop files here or click to browse</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                    Max file size: 10MB
+                </p>
+                <input type="file" id="fileInput" multiple style="display: none;">
+            </div>
+            
+            <div class="upload-info">
+                <p><i class="fas fa-info-circle"></i> Supported formats: Images, PDF, Text, Word, Excel</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
